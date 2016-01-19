@@ -27,3 +27,9 @@ $container['database'] = function($c) {
     );
     return $database;
 };
+
+$container['view'] = function($c) {
+    $settings = $c->get('settings')['view_path'];
+    $templates = new League\Plates\Engine($settings);
+    return $templates;
+};

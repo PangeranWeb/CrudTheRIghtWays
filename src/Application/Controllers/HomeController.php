@@ -20,6 +20,8 @@ class HomeController extends Controller
     public function home()
     {
         $this->db();
+        $view = $this->view('home');
+        return $this->response->getBody()->write($view);
     }
 
 }

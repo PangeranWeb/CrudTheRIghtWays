@@ -20,6 +20,7 @@ return [
             'dbname'    => 'dda_crud',
             'user'      => 'root',
             'password'  => 'anisnuzulan123`'
-        ]
+        ],
+        'view_path' => __DIR__ . '/Application/Views/'
     ],
 ];

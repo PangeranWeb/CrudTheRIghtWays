@@ -17,4 +17,10 @@ class Controller
     {
         return $this->app()->getContainer()->get('database');
     }
+
+    public function view($filename, $data = array())
+    {
+        $templates = $this->app()->getContainer()->get('view');
+        return $templates->render($filename, $data);
+    }
 }
