@@ -2,7 +2,9 @@
 
 namespace Application\Controllers;
 
-class HomeController
+use Application\Core\Controller;
+
+class HomeController extends Controller
 {
     private $request;
     private $response;
@@ -17,14 +19,7 @@ class HomeController
     
     public function home()
     {
-        //var_dump($this->request);
-        //var_dump($this->response);
-        //var_dump($this->args);
-        $this->response->getBody()->write("Hello, ". $this->args['name']);
+        $this->db();
     }
 
-    public function akhyar($request, $response, $args)
-    {
-        $response->getBody()->write("aku akhyar");
-    }
 }
