@@ -2,7 +2,7 @@
 
 namespace Application\Core;
 
-class Controller
+class Model
 {
     public function app()
     {
@@ -13,9 +13,8 @@ class Controller
         return $app;
     }
 
-    public function view($filename, $data = array())
+    public function db()
     {
-        $templates = $this->app()->getContainer()->get('view');
-        return $templates->render($filename, $data);
-    }
+        return $this->app()->getContainer()->get('database');
+    }    
 }

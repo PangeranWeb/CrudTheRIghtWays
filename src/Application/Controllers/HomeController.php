@@ -3,6 +3,7 @@
 namespace Application\Controllers;
 
 use Application\Core\Controller;
+use Application\Models\HomeModel;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,8 @@ class HomeController extends Controller
     
     public function home()
     {
-        $this->db();
+        $homeModel = new HomeModel;
+        $homeModel->getAllHome();
         $view = $this->view('home');
         return $this->response->getBody()->write($view);
     }
