@@ -33,3 +33,14 @@ $container['view'] = function($c) {
     $templates = new League\Plates\Engine($settings);
     return $templates;
 };
+
+$container['session'] = function($c) {
+   $session_factory = new \Aura\Session\SessionFactory;
+   $session = $session_factory->newInstance($_SESSION);
+   return $session;
+};  
+
+$container['query'] = function($c) {
+    $conn = new Doctrine\DBAL;
+    var_dump($conn);
+};

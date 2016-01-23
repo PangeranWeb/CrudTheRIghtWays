@@ -18,4 +18,14 @@ class Controller
         $templates = $this->app()->getContainer()->get('view');
         return $templates->render($filename, $data);
     }
+
+    public function session()
+    {
+        return $this->app()->getContainer()->get('session');
+    }
+
+    public function redirect($url)
+    {
+        echo "<script>window.location = '$url'; </script>";
+    }
 }
